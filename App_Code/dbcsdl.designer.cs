@@ -87,6 +87,8 @@ public partial class khachhang : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private string _email;
 	
+	private string _password;
+	
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -99,6 +101,8 @@ public partial class khachhang : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnsdtChanged();
     partial void OnemailChanging(string value);
     partial void OnemailChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
     #endregion
 	
 	public khachhang()
@@ -182,6 +186,26 @@ public partial class khachhang : INotifyPropertyChanging, INotifyPropertyChanged
 				this._email = value;
 				this.SendPropertyChanged("email");
 				this.OnemailChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+	public string password
+	{
+		get
+		{
+			return this._password;
+		}
+		set
+		{
+			if ((this._password != value))
+			{
+				this.OnpasswordChanging(value);
+				this.SendPropertyChanging();
+				this._password = value;
+				this.SendPropertyChanged("password");
+				this.OnpasswordChanged();
 			}
 		}
 	}
