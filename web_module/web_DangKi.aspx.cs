@@ -33,9 +33,11 @@ public partial class web_module_web_DangKi : System.Web.UI.Page
                 insert.sdt = txtSoDienThoai.Value;
                 insert.ten = txtHoTen.Value;
                 insert.email = txtEmail.Value;
+                insert.password = txtPassword.Value;
+
                 db.khachhangs.InsertOnSubmit(insert);
                 db.SubmitChanges();
-                
+                Response.Redirect("/web_module/web_DangNhap.aspx");
             }
         }
     }

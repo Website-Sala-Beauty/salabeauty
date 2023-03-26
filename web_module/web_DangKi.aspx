@@ -16,6 +16,8 @@
                 </div>
                  <label>Số điện thoại *</label>
                 <input type="text" id="txtSoDienThoai" runat="server" />
+                 <label>Password *</label>
+                <input type="password" id="txtPassword" runat="server" />
                 <label>Họ & Tên *</label>
                 <input type="text" id="txtHoTen" runat="server" />
                 <label>Email</label>
