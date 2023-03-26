@@ -34,6 +34,7 @@ public partial class web_module_web_DangKi : System.Web.UI.Page
                 insert.user_FullName = txtHoTen.Value;
                 insert.user_Email = txtEmail.Value;
                 insert.user_Password = txtPassword.Value;
+                insert.groupuser_id = 4;
 
                 db.tb_Users.InsertOnSubmit(insert);
                 db.SubmitChanges();
