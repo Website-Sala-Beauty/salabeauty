@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../css/web_DangKi.css" rel="stylesheet" />
 </head>
 <body>
     <form id="frm" runat="server">
@@ -19,9 +20,8 @@
                 <input type="text" id="txtHoTen" runat="server" />
                 <label>Email</label>
                 <input type="text" id="txtEmail" runat="server" />
-                <label>Mã giới thiệu ( Nếu có)</label>
-                <input type="text" id="txtMaGioiThieu" runat="server" />
-                <asp:Button CssClass="btn_DangNhap" ID="btnDangki" runat="server" OnClick="btnDangki_ServerClick" Text="Đăng kí" />
+                <asp:Button CssClass="btn_DangNhap" ID="btnDangki" runat="server" Text="Đăng kí" />
+
             </div>
         </div>
     </form>
