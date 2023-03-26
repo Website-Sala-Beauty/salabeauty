@@ -20,7 +20,7 @@
                 <input type="text" id="txtHoTen" runat="server" />
                 <label>Email</label>
                 <input type="text" id="txtEmail" runat="server" />
-                <asp:Button CssClass="btn_DangNhap" ID="btnDangki" runat="server" Text="Đăng kí" />
+                <asp:Button CssClass="btn_DangNhap" ID="btnDangki" runat="server" OnClick="btnDangki_Click" Text="Đăng kí" />
 
             </div>
         </div>
