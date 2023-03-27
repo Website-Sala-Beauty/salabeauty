@@ -50,7 +50,7 @@
         <div class="row">
             <asp:Repeater ID="rpMauNail" runat="server">
                 <ItemTemplate>
-                    <a href="web_MauNailChiTietDatLich.aspx"<%--mau-nail-dat-lich-<%#Eval("loaisanpham_id")%>--%>" class="block-nailbox col-sm-5">
+                    <a href="mau-nail-dat-lich-<%#Eval("loaisanpham_id")%>" class="block-nailbox col-sm-5">
                         <img src="<%#Eval("loaisanpham_image") %>" />
                         <span class="name-album"><%#Eval("loaisanpham_name") %></span>
                     </a>

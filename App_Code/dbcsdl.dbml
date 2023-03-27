@@ -18,6 +18,94 @@
       <Column Name="groupuser_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tb_DanhGia" Member="tb_DanhGias">
+    <Type Name="tb_DanhGia">
+      <Column Name="danhgia_id" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="dichvu_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DanhGiaChiTiet" Member="tb_DanhGiaChiTiets">
+    <Type Name="tb_DanhGiaChiTiet">
+      <Column Name="danhgiachitiet_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="danhgiachitiet_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgiachitiet_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgiachitiet_binhchon" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="danhgia_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="danhgiachitiet_ngaylap" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="danhgiachitiet_hidden" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DichVu" Member="tb_DichVus">
+    <Type Name="tb_DichVu">
+      <Column Name="dichvu_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dichvu_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dichvu_giatien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="loaidichvu_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DichVuGiaoDich" Member="tb_DichVuGiaoDiches">
+    <Type Name="tb_DichVuGiaoDich">
+      <Column Name="dvGiaoDich_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dvGiaoDich_trangthai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dvGiaoDich_ngay" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_gio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_slKhach" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dvGiaoDich_capnhatgia" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dvGiaoDich_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_giatien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_tongtien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dv_tuchon_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="luutam_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="luuSpAdminId" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_DonHangGiaoDich" Member="tb_DonHangGiaoDiches">
+    <Type Name="tb_DonHangGiaoDich">
+      <Column Name="dhgd_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dhgd_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="luunbAdmin_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_GioHang" Member="tb_GioHangs">
+    <Type Name="tb_GioHang">
+      <Column Name="giohang_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="nailbox_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="xuhuong_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="giohang_tinhtrang" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="giohang_ngaythem" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="sanpham_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_Heart" Member="tb_Hearts">
+    <Type Name="tb_Heart">
+      <Column Name="heart_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_LichSuGiaoDich" Member="tb_LichSuGiaoDiches">
+    <Type Name="tb_LichSuGiaoDich">
+      <Column Name="lsgd_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="lsgd_ngay" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="lsgd_gio" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvcsAdmin_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="dvtcAdmin_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="username_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="lsgd_trangthai" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="lsgd_tongtien" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvGiaoDich_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="luuspAdmin_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_LoaiDichVu" Member="tb_LoaiDichVus">
+    <Type Name="tb_LoaiDichVu">
+      <Column Name="loaidichvu_id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="loaidichvu_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.tb_LoaiSanPham" Member="tb_LoaiSanPhams">
     <Type Name="tb_LoaiSanPham">
       <Column Name="loaisanpham_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,6 +124,34 @@
       <Column Name="loaisanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="sanpham_luotmua" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="sanpham_gia" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDon" Member="tb_HoaDons">
+    <Type Name="tb_HoaDon">
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoadon_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_soluongkhachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_loaithanhtoan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_hidden" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_sdt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_tongtien" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_magiamgia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets">
+    <Type Name="tb_HoaDonChiTiet">
+      <Column Name="hoadonchitiet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoadonchitiet_soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiet_donggia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadonchitiet_thanhtien" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadonchitiet_sodienthoai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadonchitiet_hinhanhchuyenkhoan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dichvu_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sanphamtuchon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

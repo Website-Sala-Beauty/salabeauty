@@ -31,7 +31,7 @@ public partial class web_module_web_DangNhap : System.Web.UI.Page
             Response.Cookies["UserNail"].Value = txt_SoDienThoai.Value.ToString();
             if (getData.FirstOrDefault().groupuser_id == 4)
             {
-                 Response.Redirect("/web_TrangChu.aspx");
+                 Response.Redirect("/trang-chu");
             }
             else
             {

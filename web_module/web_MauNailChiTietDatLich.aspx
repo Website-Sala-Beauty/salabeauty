@@ -41,12 +41,12 @@
                                     <b class="khung1"><%#Eval("sanpham_name") %></b>
                                 </div>
                                 <div class="block-dadat">
-                                    <a id="btnChon" href="#" onclick="myChonDichVu(<%#Eval("sanpham_id") %>)"><i class="fa fa-calendar" aria-hidden="true">
-                                        <span class="block-thongso"><%--<%#Eval("tinhtrang") %>--%></span>
+                                    <a id="btnChon" href="#" onclick="myChonDichVu(<%#Eval("sanpham_id")%>)"><i class="fa fa-calendar" aria-hidden="true">
+                                        <span class="block-thongso"><%#Eval("tinhtrang") %></span>
                                     </i>
                                     </a>
                                     <a href="#" id="btnHeart" onclick="myHeart(<%#Eval("sanpham_id") %>)">
-                                        <i class="fa fa-heart<%--<%#Eval("heart") %>--%>" aria-hidden="true"></i>
+                                        <i class="fa <%#Eval("heart") %>" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>

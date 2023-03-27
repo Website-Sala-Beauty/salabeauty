@@ -208,7 +208,7 @@
                         <img class="pure-material-button-contained" src="App_image/icon/icon-dichvu.jpg" />
                         <span>Menu dịch vụ</span>
                     </a>
-                    <a href="/web_module/web_AblumSanPham.aspx" class="col-4">
+                    <a href="album-nails" class="col-4">
                         <img class="pure-material-button-contained" src="App_image/icon/icon-album.jpg" />
                         <span>Album mẫu nails</span>
                     </a>
