@@ -11,14 +11,14 @@ public partial class Admin_MasterPage : System.Web.UI.MasterPage
     public string adminName, count;
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Request.Cookies["UserName"] != null)
+        if (Request.Cookies["phone"] != null)
         {
-            adminName = Request.Cookies["UserName"].Value;
+            adminName = Request.Cookies["phone"].Value;
             //loadMenu();
         }
         else
         {
-            Response.Redirect("/admin-login");
+            Response.Redirect("/web_DangNhap.aspx");
         }
     }
 
