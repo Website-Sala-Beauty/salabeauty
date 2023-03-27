@@ -55,7 +55,7 @@ public class webui
         list.Add("thietlaptaikhoan|thiet-lap-tai-khoan|~/web_module/web_ThietLapTaiKhoan.aspx");
         list.Add("thongtinchinhanhchitiet|thong-tin-chi-nhanh-chi-tiet-{chinhanh-id}|~/web_module/web_ThongTinChiNhanhChiTiet.aspx");
         list.Add("thongtinchinhanh|thong-tin-chi-nhanh|~/web_module/web_ThongTinChiNhanh.aspx");
-        list.Add("thongtinkhachhang|thong-tin-khach-hang|~/web_module/web_thongtinkhachhang.aspx");
+        list.Add("thongtinkhachhang|thong-tin-khach-hang|~/web_module/web_ThongTinKhachHang.aspx");
         list.Add("thongtindonhang|thong-tin-don-hang|~/web_module/web_ThongTinDonHang.aspx");
         list.Add("dangki|dang-ki|~/web_module/web_DangKi.aspx");
         list.Add("khomagiamgiagiohang|kho-ma-giam-gia-gio-hang|~/web_module/web_KhoVocherGioHang.aspx");
