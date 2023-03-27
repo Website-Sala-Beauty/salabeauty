@@ -13,11 +13,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="navabar">
-
         <a href="/hoa-don-dat-lich"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>DỊCH VỤ</span></div>
         <div>
-            
         </div>
         <div class="icon-infor">
             <%--<uc1:linqheader runat="server" ID="linqheader" />--%>
