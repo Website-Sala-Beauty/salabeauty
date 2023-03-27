@@ -28,7 +28,7 @@ public partial class web_module_web_DangNhap : System.Web.UI.Page
         if(getData.Count() > 0)
         {
             Response.Cookies["UserNail"].Expires = DateTime.Now.AddDays(365);
-            Response.Cookies["phone"].Value = txt_SoDienThoai.Value.ToString();
+            Response.Cookies["UserNail"].Value = txt_SoDienThoai.Value.ToString();
             if (getData.FirstOrDefault().groupuser_id == 4)
             {
                  Response.Redirect("/web_TrangChu.aspx");

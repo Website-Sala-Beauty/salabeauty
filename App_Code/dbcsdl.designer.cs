@@ -382,9 +382,11 @@ public partial class tb_LoaiSanPham : INotifyPropertyChanging, INotifyPropertyCh
 	
 	private string _loaisanpham_name;
 	
-	private bool _loaisanpham_hidden;
+	private System.Nullable<bool> _loaisanpham_hidden;
 	
 	private string _loaisanpham_image;
+	
+	private string _loaisanpham_hinhthuc;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -394,10 +396,12 @@ public partial class tb_LoaiSanPham : INotifyPropertyChanging, INotifyPropertyCh
     partial void Onloaisanpham_idChanged();
     partial void Onloaisanpham_nameChanging(string value);
     partial void Onloaisanpham_nameChanged();
-    partial void Onloaisanpham_hiddenChanging(bool value);
+    partial void Onloaisanpham_hiddenChanging(System.Nullable<bool> value);
     partial void Onloaisanpham_hiddenChanged();
     partial void Onloaisanpham_imageChanging(string value);
     partial void Onloaisanpham_imageChanged();
+    partial void Onloaisanpham_hinhthucChanging(string value);
+    partial void Onloaisanpham_hinhthucChanged();
     #endregion
 	
 	public tb_LoaiSanPham()
@@ -445,8 +449,8 @@ public partial class tb_LoaiSanPham : INotifyPropertyChanging, INotifyPropertyCh
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaisanpham_hidden", DbType="Bit NOT NULL")]
-	public bool loaisanpham_hidden
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaisanpham_hidden", DbType="Bit")]
+	public System.Nullable<bool> loaisanpham_hidden
 	{
 		get
 		{
@@ -481,6 +485,26 @@ public partial class tb_LoaiSanPham : INotifyPropertyChanging, INotifyPropertyCh
 				this._loaisanpham_image = value;
 				this.SendPropertyChanged("loaisanpham_image");
 				this.Onloaisanpham_imageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaisanpham_hinhthuc", DbType="NVarChar(MAX)")]
+	public string loaisanpham_hinhthuc
+	{
+		get
+		{
+			return this._loaisanpham_hinhthuc;
+		}
+		set
+		{
+			if ((this._loaisanpham_hinhthuc != value))
+			{
+				this.Onloaisanpham_hinhthucChanging(value);
+				this.SendPropertyChanging();
+				this._loaisanpham_hinhthuc = value;
+				this.SendPropertyChanged("loaisanpham_hinhthuc");
+				this.Onloaisanpham_hinhthucChanged();
 			}
 		}
 	}
@@ -520,9 +544,11 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 	
 	private string _sanpham_image;
 	
-	private int _loaisanpham_id;
+	private System.Nullable<int> _loaisanpham_id;
 	
 	private System.Nullable<int> _sanpham_luotmua;
+	
+	private System.Nullable<decimal> _sanpham_gia;
 	
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -536,10 +562,12 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
     partial void Onsanpham_newChanged();
     partial void Onsanpham_imageChanging(string value);
     partial void Onsanpham_imageChanged();
-    partial void Onloaisanpham_idChanging(int value);
+    partial void Onloaisanpham_idChanging(System.Nullable<int> value);
     partial void Onloaisanpham_idChanged();
     partial void Onsanpham_luotmuaChanging(System.Nullable<int> value);
     partial void Onsanpham_luotmuaChanged();
+    partial void Onsanpham_giaChanging(System.Nullable<decimal> value);
+    partial void Onsanpham_giaChanged();
     #endregion
 	
 	public tb_SanPham()
@@ -547,7 +575,7 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 		OnCreated();
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 	public int sanpham_id
 	{
 		get
@@ -567,7 +595,7 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_name", DbType="NChar(10)")]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_name", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 	public string sanpham_name
 	{
 		get
@@ -607,7 +635,7 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_image", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_image", DbType="NVarChar(MAX)")]
 	public string sanpham_image
 	{
 		get
@@ -627,8 +655,8 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaisanpham_id", DbType="Int NOT NULL")]
-	public int loaisanpham_id
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaisanpham_id", DbType="Int")]
+	public System.Nullable<int> loaisanpham_id
 	{
 		get
 		{
@@ -663,6 +691,26 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 				this._sanpham_luotmua = value;
 				this.SendPropertyChanged("sanpham_luotmua");
 				this.Onsanpham_luotmuaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sanpham_gia", DbType="SmallMoney")]
+	public System.Nullable<decimal> sanpham_gia
+	{
+		get
+		{
+			return this._sanpham_gia;
+		}
+		set
+		{
+			if ((this._sanpham_gia != value))
+			{
+				this.Onsanpham_giaChanging(value);
+				this.SendPropertyChanging();
+				this._sanpham_gia = value;
+				this.SendPropertyChanged("sanpham_gia");
+				this.Onsanpham_giaChanged();
 			}
 		}
 	}
