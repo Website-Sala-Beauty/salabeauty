@@ -204,7 +204,7 @@
             </div>
             <div class="block-chinh2">
                 <div class="row">
-                    <a href="/menu-dich-vu" class="col-4">
+                    <a href="web_module/web_MenuDichVu.aspx" class="col-4">
                         <img class="pure-material-button-contained" src="App_image/icon/icon-dichvu.jpg" />
                         <span>Menu dịch vụ</span>
                     </a>
