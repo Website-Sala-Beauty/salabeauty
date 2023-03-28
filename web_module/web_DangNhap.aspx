@@ -56,13 +56,12 @@
                 </div>
                 <a href="#" class="btn_DangNhap" id="btnDanhNhap" runat="server" onclick=" return checkNull()" onserverclick="btnDanhNhap_ServerClick">ĐĂNG NHẬP</a>
                 <div class="text_login">
-                    <a href="/web_DangKy.aspx">Đăng ký</a>
-                    <a href="/dang-ki">Quên mật khẩu</a>
+                    <a href="/app-dang-ki">Đăng ký</a>
+                    <a href="#">Quên mật khẩu</a>
                 </div>
             </form>
         </div>
         </div>
-    </div>
     <script>
         function checkNull() {
             var user = document.getElementById("<%=txt_SoDienThoai.ClientID%>").value;

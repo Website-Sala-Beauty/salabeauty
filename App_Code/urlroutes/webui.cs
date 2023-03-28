@@ -23,6 +23,7 @@ public class webui
         list.Add("trangchu|trang-chu|~/web_TrangChu.aspx");
 
         list.Add("applogin|app-login|~/web_module/web_DangNhap.aspx");
+        list.Add("appdangki|app-dang-ki|~/web_module/web_DangKi.aspx");
         //Xu hướng
         list.Add("capnhatxuhuong|app-cap-nhat-xu-huong|~/web_module/web_CapNhatXuHuong.aspx");
         list.Add("webcapnhatxuhuongchitiet|cap-nhat-xu-huong-chi-tiet-{xuhuong-id}|~/web_module/web_CapNhatXuHuongChiTiet.aspx");
