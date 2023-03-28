@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_TrangChu.aspx.cs" Inherits="web_TrangChu" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="../../css/style.css" rel="stylesheet" />
     <link href="../../css/bootstrap.min.css" rel="stylesheet" />
@@ -136,6 +137,43 @@
             width: 18%;
         }
     </style>
+    <style>
+        .search-wrapper {
+            border-radius: 10px;
+            background-color: white;
+            padding-right: 12px;
+            height: 64px;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 93%;
+            color: black;
+            box-shadow: 0 2px 6px 0 rgb(136 148 171 / 20%), 0 24px 20px -24px rgb(71 82 107 / 10%);
+            overflow: hidden;
+            z-index: 100;
+            margin: 4%;
+            /* margin-right: 55%; */
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding-left: 3%;
+            font-size: 20px;
+        }
+        input:focus-visible{
+            border:none !important
+        }
+    </style>
+    <script>
+                    function searchText() {
+                        var text = document.getElementById("txtSearch").value;
+                        window.location.href = "/tim-kiem-" + text;
+                    }
+     </script>   
     <div class="navabar">
         <span style="margin-left: 26%; margin-top: 19px;"><span style="font-family: 'Great Vibes'; font-size: 75px;">Sala</span><span style="margin-left: 25px; font-size: 42px;">NAILS & BEAUTY</span></span>
         <div class="icon-infor">
@@ -162,12 +200,18 @@
         </div>
 
         <div class="block-dichvu">
+            <div class="search-wrapper">
+                <%--// sự kiện thay đổi giá trị của textbox--%>
+                <input class="search-input" type="text" id="txtSearch" placeholder="Search">
+                
+               <i class="fa fa-search" aria-hidden="true" onclick="searchText()"></i>
+            </div>
             <div class="row">
                 <a href="/ma-qr" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/qr-code.jpg" />
                     <span>Mã QR</span>
                 </a>
-                <a href="/ma-giam-gia" class="col-3">
+                <a href="#<%--/ma-giam-gia--%>" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/discounts.jpg" />
 
                     <span>Giảm giá MỚI</span>
@@ -176,17 +220,17 @@
                     <img class="pure-material-button-contained" src="App_image/icon/nail.jpg" />
                     <span>Dịch vụ</span>
                 </a>
-                <a href="/app-cap-nhat-xu-huong" class="col-3">
+                <a href="#<%--/app-cap-nhat-xu-huong--%>" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/diamond.jpg" />
                     <span>Xu hướng</span>
                 </a>
             </div>
             <div class="row">
-                <a href="/san-pham-dong-gia" class="col-3">
+                <a href="#" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/69k.png" />
                     <span>Đồng giá 69k</span>
                 </a>
-                <a href="/thong-tin-chi-nhanh" class="col-3">
+                <a href="#" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/living-room.jpg" />
                     <span>chi nhánh</span>
                 </a>
@@ -194,7 +238,7 @@
                     <img class="pure-material-button-contained" src="App_image/icon/clock.jpg" />
                     <span>Thông tin bill</span>
                 </a>
-                <a href="/hom-thu" class="col-3">
+                <a href="#" class="col-3">
                     <img class="pure-material-button-contained" src="App_image/icon/checklist.jpg" />
                     <span>Góp ý</span>
                 </a>
@@ -208,7 +252,7 @@
                         <img class="pure-material-button-contained" src="App_image/icon/icon-dichvu.jpg" />
                         <span>Menu dịch vụ</span>
                     </a>
-                    <a href="/album-nails" class="col-4">
+                    <a href="album-nails" class="col-4">
                         <img class="pure-material-button-contained" src="App_image/icon/icon-album.jpg" />
                         <span>Album mẫu nails</span>
                     </a>

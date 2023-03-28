@@ -1,15 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_ChiTietDichVu.aspx.cs" Inherits="web_module_web_ChiTietDichVu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_DichVu.aspx.cs" Inherits="web_module_web_DichVu" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link href="../../css/css_Ngan/css_DichVu.css" rel="stylesheet" />
+    <link href="../../css/footer.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    
-  <div class="navabar">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div class="navabar">
+        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>DỊCH VỤ</span></div>
         <div class="icon-infor">
+            <%--<uc1:linqheader runat="server" ID="linqheader" />--%>
         </div>
     </div>
-     <div class="base">
+    <div class="base">
         <div class="container_form">
             <asp:Repeater ID="rpNews" runat="server">
                 <ItemTemplate>
@@ -29,4 +32,6 @@
         </div>
     </div>
 </asp:Content>
+
+
 

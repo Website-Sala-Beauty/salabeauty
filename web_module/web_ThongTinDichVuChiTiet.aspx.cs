@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class web_module_web_ChiTietDichVu : System.Web.UI.Page
+public partial class web_module_web_ThongTinDichVuChiTiet : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
