@@ -19,7 +19,7 @@ public partial class web_module_web_MenuDichVu : System.Web.UI.Page
         }
         else
         {
-            Response.Redirect("/web_module/web_DangNhap.aspx");
+            Response.Redirect("/app-login");
         }
     }
     protected void loadData()
@@ -45,31 +45,33 @@ public partial class web_module_web_MenuDichVu : System.Web.UI.Page
                             d.sanpham_gia,
                             l.loaisanpham_id,
                             l.loaisanpham_name,
-                            //sanpham_class = (from hdct in db.tb_HoaDonChiTiets
-                            //                 join hd in db.tb_HoaDons on hdct.hoadon_id equals hd.hoadon_id
-                            //                 where hdct.sanpham_id == d.sanpham_id && hd.hoadon_tinhtrang == "Order" && hd.khachhang_id == getIDKhachHang.FirstOrDefault().khachhang_id
-                            //                 select hdct).Count() > 0 ? "" : "fa-plus-circle"
+                            sanpham_class = (from hdct in db.tb_HoaDonChiTiets
+                                             join hd in db.tb_HoaDons on hdct.hoadon_id equals hd.hoadon_id
+                                             where hdct.sanpham_id == d.sanpham_id && hd.hoadon_tinhtrang == "Order" && hd.khachhang_id == getIDKhachHang.FirstOrDefault().user_Id
+                                             select hdct).Count() > 0 ? "" : "fa-plus-circle"
 
                         };
         rpDichVuItem.DataSource = getDataDV;
         rpDichVuItem.DataBind();
     }
 
-    //protected void btnChonSanPham_ServerClick(object sender, EventArgs e)
-    //{
-    //cls_TaoBill taoBill = new cls_TaoBill();
-    //    if (taoBill.tao_Bill(Convert.ToInt32(txtSanPham.Value), Request.Cookies["phone"].Value))
-    //    {
-    //        alert.alert_Success(Page, "Đã lưu vào đặt lịch", "");
-    //    }
-    //    else
-    //    {
-    //        alert.alert_Error(Page, "Dịch vụ này đã có trong đặt lịch", "");
-    //    }
-    //    loadData();
-    //}
-
     protected void btnChonSanPham_ServerClick(object sender, EventArgs e)
+    {
+        cls_TaoBill taoBill = new cls_TaoBill();
+        if (taoBill.tao_Bill(Convert.ToInt32(txtSanPham.Value), Request.Cookies["UserNail"].Value))
+        {
+            alert.alert_Success(Page, "Đã lưu vào đặt lịch", "");
+        }
+        else
+        {
+            alert.alert_Error(Page, "Dịch vụ này đã có trong đặt lịch", "");
+        }
+        loadData();
+    }
+
+   
+
+    protected void btnChonSanPham_ServerClick1(object sender, EventArgs e)
     {
 
     }

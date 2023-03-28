@@ -51,7 +51,7 @@
                     <div>
                         <label>Mật khẩu</label></div>
                     <div>
-                        <input runat="server" type="text" id="txt_taikhoan" /></div>
+                        <input runat="server" type="password" id="txt_taikhoan" /></div>
                     <div class="block_erorr"><span id="errorNullMK">Vui lòng nhập mật khẩu</span></div>
                 </div>
                 <a href="#" class="btn_DangNhap" id="btnDanhNhap" runat="server" onclick=" return checkNull()" onserverclick="btnDanhNhap_ServerClick">ĐĂNG NHẬP</a>

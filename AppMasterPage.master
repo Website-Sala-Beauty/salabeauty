@@ -77,7 +77,7 @@
                 <img src="../images/chi-nhanh.png" />
                 <p style="padding: unset">Chi Nhánh</p>
             </a>
-            <a href="/thong-tin-khach-hang">
+            <a href="/web_module/web_ThongTinKhachHang.aspx">
                 <div class="tab teal">
                     <img src="../images/admin.png" />
                     <p>Thông tin</p>

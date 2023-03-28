@@ -15,6 +15,6 @@ public partial class web_module_web_ThongTinKhachHang : System.Web.UI.Page
     protected void btnDangXuat_ServerClick(object sender, EventArgs e)
     {
         Response.Cookies["UserNail"].Expires = DateTime.Now.AddDays(-1);
-        Response.Redirect("app-login");
+        Response.Redirect("/app-login");
     }
 }

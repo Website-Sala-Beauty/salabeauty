@@ -4,6 +4,11 @@
     <link href="../../css/footer.css" rel="stylesheet" />
     <link href="../css/css_chonmenudichvu.css" rel="stylesheet" />
     <script src="../../admin_js/sweetalert.min.js"></script>
+    <style>
+        .fa:active{
+            color: red;
+        }
+    </style>
     <script>
         function myChonDichVu(id) {
             document.getElementById("<%=txtSanPham.ClientID%>").value = id;
@@ -17,12 +22,9 @@
         <div class="tieude"><span>DỊCH VỤ</span></div>
       
     </div>
-
     <div class="base">
         <div class="container_form">
-              
             <div class="block-dichvu">
-
                 <div class="list">
                     <asp:ScriptManager ID="scrDichVu" runat="server"></asp:ScriptManager>
                     <asp:UpdatePanel ID="upDichVu" runat="server">
@@ -40,7 +42,7 @@
                                             <a id="btnChon" href="#" onclick="myChonDichVu(<%#Eval("sanpham_id") %>)" class="block-menu">
                                                 <span><%#Eval("sanpham_name") %></span>
                                                 <span><%#Eval("sanpham_gia", "{0:N0}") %>
-                                                   <%-- <i style="color: pink" class="fa <%#Eval("sanpham_class") %>" aria-hidden="true"></i>--%>
+                                                    <i style="color: pink" class="fa <%#Eval("sanpham_class") %>" aria-hidden="true"></i>
                                                 </span>
                                             </a>
                                         </ItemTemplate>
@@ -62,6 +64,5 @@
 
 
 </asp:Content>
-
 
 

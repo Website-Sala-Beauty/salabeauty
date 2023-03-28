@@ -8,7 +8,7 @@
     <link href="../../css/footer.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
-    <link href="../../css_Quy/css_ChonSanPham.css" rel="stylesheet" />
+    <link href="../css/css_ChonSanPham.css" rel="stylesheet" />
 
         <%--banner--%>
         <div class="navabar" style="position: unset">
@@ -43,16 +43,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade" id="content-javascript"
                             role="tabpanel" aria-labelledby="tab-javascript">
-                            <%--<asp:Button Class="btn-taihinhlen" Text="Tải hình lên" runat="server" />
-
-                            <div class="content-1">
-                                <img class="img-1" src="web_module/images/image_CapNhatXuHuongChiTiet/09-mau-son-mong-tay-han-quoc.jpg" />
-                                <div class="cont">
-                                    <p class="ten-file">123.png</p>
-                                    <p class="gia-tien">Giá tiền mong muốn:</p>
-                                    <input class="nhap-gia" />
-                                </div>
-                            </div>--%>
+                          
                             <div class="col-12">
                                             
                                             <div class="colum-5 form-group">

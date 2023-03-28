@@ -164,16 +164,33 @@
             padding-left: 3%;
             font-size: 20px;
         }
-        input:focus-visible{
-            border:none !important
-        }
+
+            input:focus-visible {
+                outline: 0;
+            }
+
+            input:focus {
+                outline: 0;
+            }
     </style>
     <script>
-                    function searchText() {
-                        var text = document.getElementById("txtSearch").value;
-                        window.location.href = "/tim-kiem-" + text;
-                    }
-     </script>   
+
+        function searchText() {
+            var text = document.getElementById("txtSearch").value;
+            window.location.href = "/tim-kiem-" + text;
+        }
+        var input = document.getElementById("txtSearch");
+        function searchKeyPress(e) {
+            e = e || window.event;
+            if (e.keyCode == 13) {
+                searchText();
+                return false;
+            }
+            return true;
+        }
+
+
+    </script>
     <div class="navabar">
         <span style="margin-left: 26%; margin-top: 19px;"><span style="font-family: 'Great Vibes'; font-size: 75px;">Sala</span><span style="margin-left: 25px; font-size: 42px;">NAILS & BEAUTY</span></span>
         <div class="icon-infor">
@@ -202,9 +219,9 @@
         <div class="block-dichvu">
             <div class="search-wrapper">
                 <%--// sự kiện thay đổi giá trị của textbox--%>
-                <input class="search-input" type="text" id="txtSearch" placeholder="Search">
-                
-               <i class="fa fa-search" aria-hidden="true" onclick="searchText()"></i>
+                <input class="search-input" type="text" id="txtSearch" onkeypress="return searchKeyPress(event);"  placeholder="Search">
+
+                <i class="fa fa-search" aria-hidden="true" onclick="searchText()"></i>
             </div>
             <div class="row">
                 <a href="/ma-qr" class="col-3">

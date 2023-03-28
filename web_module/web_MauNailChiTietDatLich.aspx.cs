@@ -37,7 +37,7 @@ public partial class web_module_web_MauNailChiTietDatLich : System.Web.UI.Page
                           nb.sanpham_image,
                           nailbox_new = nb.sanpham_new == true ? "display:block" : "display:none",
                           tinhtrang = (from gh in db.tb_HoaDonChiTiets
-                                       join hd in db.tb_HoaDons on gh.hoadonchitiet_id equals hd.hoadon_id
+                                       join hd in db.tb_HoaDons on gh.hoadon_id equals hd.hoadon_id
                                        where hd.khachhang_id == getkh.user_Id && gh.sanpham_id == nb.sanpham_id
                                        && hd.hoadon_tinhtrang == "Order"
                                        select gh).Count() > 0 ? "Đã thêm" : "Đặt lịch",
