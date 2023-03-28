@@ -126,20 +126,6 @@
       <Column Name="sanpham_gia" Type="System.Decimal" DbType="SmallMoney" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tb_HoaDon" Member="tb_HoaDons">
-    <Type Name="tb_HoaDon">
-      <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="hoadon_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="hoadon_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hoadon_soluongkhachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="hoadon_loaithanhtoan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="hoadon_hidden" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="hoadon_sdt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="hoadon_tongtien" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="hoadon_magiamgia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tb_HoaDonChiTiet" Member="tb_HoaDonChiTiets">
     <Type Name="tb_HoaDonChiTiet">
       <Column Name="hoadonchitiet_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -152,6 +138,56 @@
       <Column Name="sanpham_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="sanphamtuchon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="hoadon_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_MaGiamGia" Member="tb_MaGiamGias">
+    <Type Name="tb_MaGiamGia">
+      <Column Name="magiamgia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="magiamgia_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_color" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_soluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="magiamgia_ngaybatdau" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="magiamgia_ngayketthuc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="magiamgia_sogiam" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_hiden" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="magiamgia_noidung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="magiamgia_owned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="magiamgia_khachhangid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loaigiamgia_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_HoaDon" Member="tb_HoaDons">
+    <Type Name="tb_HoaDon">
+      <Column Name="hoadon_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoadon_code" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_tinhtrang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_soluongkhachhang" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="hoadon_loaithanhtoan" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_hidden" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_sdt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_tongtien" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_magiamgia" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_tenkhachhang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_createdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="hoadon_giovao" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_phaitra" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="hoadon_tinhtrangbill" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="hoadon_diachigiaohang" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_LoaiMaGiamGia" Member="tb_LoaiMaGiamGias">
+    <Type Name="tb_LoaiMaGiamGia">
+      <Column Name="loaimagiamgia_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="loaimagiamgia_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_MaGiamGiaCuaKhachHang" Member="tb_MaGiamGiaCuaKhachHangs">
+    <Type Name="tb_MaGiamGiaCuaKhachHang">
+      <Column Name="magiamgiacuakhachhang_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="magiamgia_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

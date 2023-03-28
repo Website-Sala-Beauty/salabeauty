@@ -10,14 +10,14 @@ p {
     font-family: Roboto-Regular;
 }
 .container_form {
-    background-image: url('../web_module/images/a46f39377fd070b66cb6e7836906df62.png');
+    background-image: url('../images/a46f39377fd070b66cb6e7836906df62.png');
     position: absolute;
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    top:-0.3%;
+    top: -0.3%;
 }
 
 .base {

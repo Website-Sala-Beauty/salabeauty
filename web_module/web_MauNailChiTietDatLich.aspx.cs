@@ -9,6 +9,7 @@ public partial class web_module_web_MauNailChiTietDatLich : System.Web.UI.Page
 {
     dbcsdlDataContext db = new dbcsdlDataContext();
     cls_Alert alert = new cls_Alert();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         cls_KhachHang cls = new cls_KhachHang();

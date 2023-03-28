@@ -41,12 +41,21 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void Inserttb_SanPham(tb_SanPham instance);
   partial void Updatetb_SanPham(tb_SanPham instance);
   partial void Deletetb_SanPham(tb_SanPham instance);
-  partial void Inserttb_HoaDon(tb_HoaDon instance);
-  partial void Updatetb_HoaDon(tb_HoaDon instance);
-  partial void Deletetb_HoaDon(tb_HoaDon instance);
   partial void Inserttb_HoaDonChiTiet(tb_HoaDonChiTiet instance);
   partial void Updatetb_HoaDonChiTiet(tb_HoaDonChiTiet instance);
   partial void Deletetb_HoaDonChiTiet(tb_HoaDonChiTiet instance);
+  partial void Inserttb_MaGiamGia(tb_MaGiamGia instance);
+  partial void Updatetb_MaGiamGia(tb_MaGiamGia instance);
+  partial void Deletetb_MaGiamGia(tb_MaGiamGia instance);
+  partial void Inserttb_HoaDon(tb_HoaDon instance);
+  partial void Updatetb_HoaDon(tb_HoaDon instance);
+  partial void Deletetb_HoaDon(tb_HoaDon instance);
+  partial void Inserttb_LoaiMaGiamGia(tb_LoaiMaGiamGia instance);
+  partial void Updatetb_LoaiMaGiamGia(tb_LoaiMaGiamGia instance);
+  partial void Deletetb_LoaiMaGiamGia(tb_LoaiMaGiamGia instance);
+  partial void Inserttb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
+  partial void Updatetb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
+  partial void Deletetb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
   #endregion
 	
 	public dbcsdlDataContext() : 
@@ -183,6 +192,22 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
+	public System.Data.Linq.Table<tb_HoaDonChiTiet> tb_HoaDonChiTiets
+	{
+		get
+		{
+			return this.GetTable<tb_HoaDonChiTiet>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tb_MaGiamGia> tb_MaGiamGias
+	{
+		get
+		{
+			return this.GetTable<tb_MaGiamGia>();
+		}
+	}
+	
 	public System.Data.Linq.Table<tb_HoaDon> tb_HoaDons
 	{
 		get
@@ -191,11 +216,19 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		}
 	}
 	
-	public System.Data.Linq.Table<tb_HoaDonChiTiet> tb_HoaDonChiTiets
+	public System.Data.Linq.Table<tb_LoaiMaGiamGia> tb_LoaiMaGiamGias
 	{
 		get
 		{
-			return this.GetTable<tb_HoaDonChiTiet>();
+			return this.GetTable<tb_LoaiMaGiamGia>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tb_MaGiamGiaCuaKhachHang> tb_MaGiamGiaCuaKhachHangs
+	{
+		get
+		{
+			return this.GetTable<tb_MaGiamGiaCuaKhachHang>();
 		}
 	}
 }
@@ -1897,284 +1930,6 @@ public partial class tb_SanPham : INotifyPropertyChanging, INotifyPropertyChange
 	}
 }
 
-[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_HoaDon")]
-public partial class tb_HoaDon : INotifyPropertyChanging, INotifyPropertyChanged
-{
-	
-	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-	
-	private int _hoadon_id;
-	
-	private string _hoadon_code;
-	
-	private string _hoadon_tinhtrang;
-	
-	private System.Nullable<int> _khachhang_id;
-	
-	private System.Nullable<int> _hoadon_soluongkhachhang;
-	
-	private string _hoadon_loaithanhtoan;
-	
-	private string _hoadon_hidden;
-	
-	private string _hoadon_sdt;
-	
-	private string _hoadon_tongtien;
-	
-	private string _hoadon_magiamgia;
-	
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onhoadon_idChanging(int value);
-    partial void Onhoadon_idChanged();
-    partial void Onhoadon_codeChanging(string value);
-    partial void Onhoadon_codeChanged();
-    partial void Onhoadon_tinhtrangChanging(string value);
-    partial void Onhoadon_tinhtrangChanged();
-    partial void Onkhachhang_idChanging(System.Nullable<int> value);
-    partial void Onkhachhang_idChanged();
-    partial void Onhoadon_soluongkhachhangChanging(System.Nullable<int> value);
-    partial void Onhoadon_soluongkhachhangChanged();
-    partial void Onhoadon_loaithanhtoanChanging(string value);
-    partial void Onhoadon_loaithanhtoanChanged();
-    partial void Onhoadon_hiddenChanging(string value);
-    partial void Onhoadon_hiddenChanged();
-    partial void Onhoadon_sdtChanging(string value);
-    partial void Onhoadon_sdtChanged();
-    partial void Onhoadon_tongtienChanging(string value);
-    partial void Onhoadon_tongtienChanged();
-    partial void Onhoadon_magiamgiaChanging(string value);
-    partial void Onhoadon_magiamgiaChanged();
-    #endregion
-	
-	public tb_HoaDon()
-	{
-		OnCreated();
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-	public int hoadon_id
-	{
-		get
-		{
-			return this._hoadon_id;
-		}
-		set
-		{
-			if ((this._hoadon_id != value))
-			{
-				this.Onhoadon_idChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_id = value;
-				this.SendPropertyChanged("hoadon_id");
-				this.Onhoadon_idChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_code", DbType="NVarChar(MAX)")]
-	public string hoadon_code
-	{
-		get
-		{
-			return this._hoadon_code;
-		}
-		set
-		{
-			if ((this._hoadon_code != value))
-			{
-				this.Onhoadon_codeChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_code = value;
-				this.SendPropertyChanged("hoadon_code");
-				this.Onhoadon_codeChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tinhtrang", DbType="NVarChar(MAX)")]
-	public string hoadon_tinhtrang
-	{
-		get
-		{
-			return this._hoadon_tinhtrang;
-		}
-		set
-		{
-			if ((this._hoadon_tinhtrang != value))
-			{
-				this.Onhoadon_tinhtrangChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_tinhtrang = value;
-				this.SendPropertyChanged("hoadon_tinhtrang");
-				this.Onhoadon_tinhtrangChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khachhang_id", DbType="Int")]
-	public System.Nullable<int> khachhang_id
-	{
-		get
-		{
-			return this._khachhang_id;
-		}
-		set
-		{
-			if ((this._khachhang_id != value))
-			{
-				this.Onkhachhang_idChanging(value);
-				this.SendPropertyChanging();
-				this._khachhang_id = value;
-				this.SendPropertyChanged("khachhang_id");
-				this.Onkhachhang_idChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_soluongkhachhang", DbType="Int")]
-	public System.Nullable<int> hoadon_soluongkhachhang
-	{
-		get
-		{
-			return this._hoadon_soluongkhachhang;
-		}
-		set
-		{
-			if ((this._hoadon_soluongkhachhang != value))
-			{
-				this.Onhoadon_soluongkhachhangChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_soluongkhachhang = value;
-				this.SendPropertyChanged("hoadon_soluongkhachhang");
-				this.Onhoadon_soluongkhachhangChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_loaithanhtoan", DbType="NVarChar(MAX)")]
-	public string hoadon_loaithanhtoan
-	{
-		get
-		{
-			return this._hoadon_loaithanhtoan;
-		}
-		set
-		{
-			if ((this._hoadon_loaithanhtoan != value))
-			{
-				this.Onhoadon_loaithanhtoanChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_loaithanhtoan = value;
-				this.SendPropertyChanged("hoadon_loaithanhtoan");
-				this.Onhoadon_loaithanhtoanChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_hidden", DbType="NVarChar(MAX)")]
-	public string hoadon_hidden
-	{
-		get
-		{
-			return this._hoadon_hidden;
-		}
-		set
-		{
-			if ((this._hoadon_hidden != value))
-			{
-				this.Onhoadon_hiddenChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_hidden = value;
-				this.SendPropertyChanged("hoadon_hidden");
-				this.Onhoadon_hiddenChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_sdt", DbType="NChar(10)")]
-	public string hoadon_sdt
-	{
-		get
-		{
-			return this._hoadon_sdt;
-		}
-		set
-		{
-			if ((this._hoadon_sdt != value))
-			{
-				this.Onhoadon_sdtChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_sdt = value;
-				this.SendPropertyChanged("hoadon_sdt");
-				this.Onhoadon_sdtChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tongtien", DbType="NChar(10)")]
-	public string hoadon_tongtien
-	{
-		get
-		{
-			return this._hoadon_tongtien;
-		}
-		set
-		{
-			if ((this._hoadon_tongtien != value))
-			{
-				this.Onhoadon_tongtienChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_tongtien = value;
-				this.SendPropertyChanged("hoadon_tongtien");
-				this.Onhoadon_tongtienChanged();
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_magiamgia", DbType="NChar(10)")]
-	public string hoadon_magiamgia
-	{
-		get
-		{
-			return this._hoadon_magiamgia;
-		}
-		set
-		{
-			if ((this._hoadon_magiamgia != value))
-			{
-				this.Onhoadon_magiamgiaChanging(value);
-				this.SendPropertyChanging();
-				this._hoadon_magiamgia = value;
-				this.SendPropertyChanged("hoadon_magiamgia");
-				this.Onhoadon_magiamgiaChanged();
-			}
-		}
-	}
-	
-	public event PropertyChangingEventHandler PropertyChanging;
-	
-	public event PropertyChangedEventHandler PropertyChanged;
-	
-	protected virtual void SendPropertyChanging()
-	{
-		if ((this.PropertyChanging != null))
-		{
-			this.PropertyChanging(this, emptyChangingEventArgs);
-		}
-	}
-	
-	protected virtual void SendPropertyChanged(String propertyName)
-	{
-		if ((this.PropertyChanged != null))
-		{
-			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-		}
-	}
-}
-
 [global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_HoaDonChiTiet")]
 public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyPropertyChanged
 {
@@ -2428,6 +2183,974 @@ public partial class tb_HoaDonChiTiet : INotifyPropertyChanging, INotifyProperty
 				this._hoadon_id = value;
 				this.SendPropertyChanged("hoadon_id");
 				this.Onhoadon_idChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_MaGiamGia")]
+public partial class tb_MaGiamGia : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _magiamgia_id;
+	
+	private string _magiamgia_name;
+	
+	private string _magiamgia_color;
+	
+	private System.Nullable<int> _magiamgia_soluong;
+	
+	private System.Nullable<System.DateTime> _magiamgia_ngaybatdau;
+	
+	private System.Nullable<System.DateTime> _magiamgia_ngayketthuc;
+	
+	private string _magiamgia_sogiam;
+	
+	private System.Nullable<bool> _magiamgia_hiden;
+	
+	private string _magiamgia_noidung;
+	
+	private string _magiamgia_code;
+	
+	private System.Nullable<bool> _magiamgia_owned;
+	
+	private System.Nullable<int> _magiamgia_khachhangid;
+	
+	private System.Nullable<int> _loaigiamgia_id;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onmagiamgia_idChanging(int value);
+    partial void Onmagiamgia_idChanged();
+    partial void Onmagiamgia_nameChanging(string value);
+    partial void Onmagiamgia_nameChanged();
+    partial void Onmagiamgia_colorChanging(string value);
+    partial void Onmagiamgia_colorChanged();
+    partial void Onmagiamgia_soluongChanging(System.Nullable<int> value);
+    partial void Onmagiamgia_soluongChanged();
+    partial void Onmagiamgia_ngaybatdauChanging(System.Nullable<System.DateTime> value);
+    partial void Onmagiamgia_ngaybatdauChanged();
+    partial void Onmagiamgia_ngayketthucChanging(System.Nullable<System.DateTime> value);
+    partial void Onmagiamgia_ngayketthucChanged();
+    partial void Onmagiamgia_sogiamChanging(string value);
+    partial void Onmagiamgia_sogiamChanged();
+    partial void Onmagiamgia_hidenChanging(System.Nullable<bool> value);
+    partial void Onmagiamgia_hidenChanged();
+    partial void Onmagiamgia_noidungChanging(string value);
+    partial void Onmagiamgia_noidungChanged();
+    partial void Onmagiamgia_codeChanging(string value);
+    partial void Onmagiamgia_codeChanged();
+    partial void Onmagiamgia_ownedChanging(System.Nullable<bool> value);
+    partial void Onmagiamgia_ownedChanged();
+    partial void Onmagiamgia_khachhangidChanging(System.Nullable<int> value);
+    partial void Onmagiamgia_khachhangidChanged();
+    partial void Onloaigiamgia_idChanging(System.Nullable<int> value);
+    partial void Onloaigiamgia_idChanged();
+    #endregion
+	
+	public tb_MaGiamGia()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int magiamgia_id
+	{
+		get
+		{
+			return this._magiamgia_id;
+		}
+		set
+		{
+			if ((this._magiamgia_id != value))
+			{
+				this.Onmagiamgia_idChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_id = value;
+				this.SendPropertyChanged("magiamgia_id");
+				this.Onmagiamgia_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_name", DbType="NVarChar(MAX)")]
+	public string magiamgia_name
+	{
+		get
+		{
+			return this._magiamgia_name;
+		}
+		set
+		{
+			if ((this._magiamgia_name != value))
+			{
+				this.Onmagiamgia_nameChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_name = value;
+				this.SendPropertyChanged("magiamgia_name");
+				this.Onmagiamgia_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_color", DbType="NVarChar(MAX)")]
+	public string magiamgia_color
+	{
+		get
+		{
+			return this._magiamgia_color;
+		}
+		set
+		{
+			if ((this._magiamgia_color != value))
+			{
+				this.Onmagiamgia_colorChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_color = value;
+				this.SendPropertyChanged("magiamgia_color");
+				this.Onmagiamgia_colorChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_soluong", DbType="Int")]
+	public System.Nullable<int> magiamgia_soluong
+	{
+		get
+		{
+			return this._magiamgia_soluong;
+		}
+		set
+		{
+			if ((this._magiamgia_soluong != value))
+			{
+				this.Onmagiamgia_soluongChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_soluong = value;
+				this.SendPropertyChanged("magiamgia_soluong");
+				this.Onmagiamgia_soluongChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_ngaybatdau", DbType="Date")]
+	public System.Nullable<System.DateTime> magiamgia_ngaybatdau
+	{
+		get
+		{
+			return this._magiamgia_ngaybatdau;
+		}
+		set
+		{
+			if ((this._magiamgia_ngaybatdau != value))
+			{
+				this.Onmagiamgia_ngaybatdauChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_ngaybatdau = value;
+				this.SendPropertyChanged("magiamgia_ngaybatdau");
+				this.Onmagiamgia_ngaybatdauChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_ngayketthuc", DbType="Date")]
+	public System.Nullable<System.DateTime> magiamgia_ngayketthuc
+	{
+		get
+		{
+			return this._magiamgia_ngayketthuc;
+		}
+		set
+		{
+			if ((this._magiamgia_ngayketthuc != value))
+			{
+				this.Onmagiamgia_ngayketthucChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_ngayketthuc = value;
+				this.SendPropertyChanged("magiamgia_ngayketthuc");
+				this.Onmagiamgia_ngayketthucChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_sogiam", DbType="NVarChar(MAX)")]
+	public string magiamgia_sogiam
+	{
+		get
+		{
+			return this._magiamgia_sogiam;
+		}
+		set
+		{
+			if ((this._magiamgia_sogiam != value))
+			{
+				this.Onmagiamgia_sogiamChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_sogiam = value;
+				this.SendPropertyChanged("magiamgia_sogiam");
+				this.Onmagiamgia_sogiamChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_hiden", DbType="Bit")]
+	public System.Nullable<bool> magiamgia_hiden
+	{
+		get
+		{
+			return this._magiamgia_hiden;
+		}
+		set
+		{
+			if ((this._magiamgia_hiden != value))
+			{
+				this.Onmagiamgia_hidenChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_hiden = value;
+				this.SendPropertyChanged("magiamgia_hiden");
+				this.Onmagiamgia_hidenChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_noidung", DbType="NVarChar(MAX)")]
+	public string magiamgia_noidung
+	{
+		get
+		{
+			return this._magiamgia_noidung;
+		}
+		set
+		{
+			if ((this._magiamgia_noidung != value))
+			{
+				this.Onmagiamgia_noidungChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_noidung = value;
+				this.SendPropertyChanged("magiamgia_noidung");
+				this.Onmagiamgia_noidungChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_code", DbType="NVarChar(MAX)")]
+	public string magiamgia_code
+	{
+		get
+		{
+			return this._magiamgia_code;
+		}
+		set
+		{
+			if ((this._magiamgia_code != value))
+			{
+				this.Onmagiamgia_codeChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_code = value;
+				this.SendPropertyChanged("magiamgia_code");
+				this.Onmagiamgia_codeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_owned", DbType="Bit")]
+	public System.Nullable<bool> magiamgia_owned
+	{
+		get
+		{
+			return this._magiamgia_owned;
+		}
+		set
+		{
+			if ((this._magiamgia_owned != value))
+			{
+				this.Onmagiamgia_ownedChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_owned = value;
+				this.SendPropertyChanged("magiamgia_owned");
+				this.Onmagiamgia_ownedChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_khachhangid", DbType="Int")]
+	public System.Nullable<int> magiamgia_khachhangid
+	{
+		get
+		{
+			return this._magiamgia_khachhangid;
+		}
+		set
+		{
+			if ((this._magiamgia_khachhangid != value))
+			{
+				this.Onmagiamgia_khachhangidChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_khachhangid = value;
+				this.SendPropertyChanged("magiamgia_khachhangid");
+				this.Onmagiamgia_khachhangidChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaigiamgia_id", DbType="Int")]
+	public System.Nullable<int> loaigiamgia_id
+	{
+		get
+		{
+			return this._loaigiamgia_id;
+		}
+		set
+		{
+			if ((this._loaigiamgia_id != value))
+			{
+				this.Onloaigiamgia_idChanging(value);
+				this.SendPropertyChanging();
+				this._loaigiamgia_id = value;
+				this.SendPropertyChanged("loaigiamgia_id");
+				this.Onloaigiamgia_idChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_HoaDon")]
+public partial class tb_HoaDon : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _hoadon_id;
+	
+	private string _hoadon_code;
+	
+	private string _hoadon_tinhtrang;
+	
+	private System.Nullable<int> _khachhang_id;
+	
+	private System.Nullable<int> _hoadon_soluongkhachhang;
+	
+	private string _hoadon_loaithanhtoan;
+	
+	private string _hoadon_hidden;
+	
+	private string _hoadon_sdt;
+	
+	private string _hoadon_tongtien;
+	
+	private string _hoadon_magiamgia;
+	
+	private string _hoadon_tenkhachhang;
+	
+	private System.Nullable<System.DateTime> _hoadon_createdate;
+	
+	private string _hoadon_giovao;
+	
+	private string _hoadon_phaitra;
+	
+	private string _hoadon_tinhtrangbill;
+	
+	private string _hoadon_diachigiaohang;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onhoadon_idChanging(int value);
+    partial void Onhoadon_idChanged();
+    partial void Onhoadon_codeChanging(string value);
+    partial void Onhoadon_codeChanged();
+    partial void Onhoadon_tinhtrangChanging(string value);
+    partial void Onhoadon_tinhtrangChanged();
+    partial void Onkhachhang_idChanging(System.Nullable<int> value);
+    partial void Onkhachhang_idChanged();
+    partial void Onhoadon_soluongkhachhangChanging(System.Nullable<int> value);
+    partial void Onhoadon_soluongkhachhangChanged();
+    partial void Onhoadon_loaithanhtoanChanging(string value);
+    partial void Onhoadon_loaithanhtoanChanged();
+    partial void Onhoadon_hiddenChanging(string value);
+    partial void Onhoadon_hiddenChanged();
+    partial void Onhoadon_sdtChanging(string value);
+    partial void Onhoadon_sdtChanged();
+    partial void Onhoadon_tongtienChanging(string value);
+    partial void Onhoadon_tongtienChanged();
+    partial void Onhoadon_magiamgiaChanging(string value);
+    partial void Onhoadon_magiamgiaChanged();
+    partial void Onhoadon_tenkhachhangChanging(string value);
+    partial void Onhoadon_tenkhachhangChanged();
+    partial void Onhoadon_createdateChanging(System.Nullable<System.DateTime> value);
+    partial void Onhoadon_createdateChanged();
+    partial void Onhoadon_giovaoChanging(string value);
+    partial void Onhoadon_giovaoChanged();
+    partial void Onhoadon_phaitraChanging(string value);
+    partial void Onhoadon_phaitraChanged();
+    partial void Onhoadon_tinhtrangbillChanging(string value);
+    partial void Onhoadon_tinhtrangbillChanged();
+    partial void Onhoadon_diachigiaohangChanging(string value);
+    partial void Onhoadon_diachigiaohangChanged();
+    #endregion
+	
+	public tb_HoaDon()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int hoadon_id
+	{
+		get
+		{
+			return this._hoadon_id;
+		}
+		set
+		{
+			if ((this._hoadon_id != value))
+			{
+				this.Onhoadon_idChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_id = value;
+				this.SendPropertyChanged("hoadon_id");
+				this.Onhoadon_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_code", DbType="NVarChar(MAX)")]
+	public string hoadon_code
+	{
+		get
+		{
+			return this._hoadon_code;
+		}
+		set
+		{
+			if ((this._hoadon_code != value))
+			{
+				this.Onhoadon_codeChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_code = value;
+				this.SendPropertyChanged("hoadon_code");
+				this.Onhoadon_codeChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tinhtrang", DbType="NVarChar(MAX)")]
+	public string hoadon_tinhtrang
+	{
+		get
+		{
+			return this._hoadon_tinhtrang;
+		}
+		set
+		{
+			if ((this._hoadon_tinhtrang != value))
+			{
+				this.Onhoadon_tinhtrangChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_tinhtrang = value;
+				this.SendPropertyChanged("hoadon_tinhtrang");
+				this.Onhoadon_tinhtrangChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khachhang_id", DbType="Int")]
+	public System.Nullable<int> khachhang_id
+	{
+		get
+		{
+			return this._khachhang_id;
+		}
+		set
+		{
+			if ((this._khachhang_id != value))
+			{
+				this.Onkhachhang_idChanging(value);
+				this.SendPropertyChanging();
+				this._khachhang_id = value;
+				this.SendPropertyChanged("khachhang_id");
+				this.Onkhachhang_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_soluongkhachhang", DbType="Int")]
+	public System.Nullable<int> hoadon_soluongkhachhang
+	{
+		get
+		{
+			return this._hoadon_soluongkhachhang;
+		}
+		set
+		{
+			if ((this._hoadon_soluongkhachhang != value))
+			{
+				this.Onhoadon_soluongkhachhangChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_soluongkhachhang = value;
+				this.SendPropertyChanged("hoadon_soluongkhachhang");
+				this.Onhoadon_soluongkhachhangChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_loaithanhtoan", DbType="NVarChar(MAX)")]
+	public string hoadon_loaithanhtoan
+	{
+		get
+		{
+			return this._hoadon_loaithanhtoan;
+		}
+		set
+		{
+			if ((this._hoadon_loaithanhtoan != value))
+			{
+				this.Onhoadon_loaithanhtoanChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_loaithanhtoan = value;
+				this.SendPropertyChanged("hoadon_loaithanhtoan");
+				this.Onhoadon_loaithanhtoanChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_hidden", DbType="NVarChar(MAX)")]
+	public string hoadon_hidden
+	{
+		get
+		{
+			return this._hoadon_hidden;
+		}
+		set
+		{
+			if ((this._hoadon_hidden != value))
+			{
+				this.Onhoadon_hiddenChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_hidden = value;
+				this.SendPropertyChanged("hoadon_hidden");
+				this.Onhoadon_hiddenChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_sdt", DbType="NChar(10)")]
+	public string hoadon_sdt
+	{
+		get
+		{
+			return this._hoadon_sdt;
+		}
+		set
+		{
+			if ((this._hoadon_sdt != value))
+			{
+				this.Onhoadon_sdtChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_sdt = value;
+				this.SendPropertyChanged("hoadon_sdt");
+				this.Onhoadon_sdtChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tongtien", DbType="NChar(10)")]
+	public string hoadon_tongtien
+	{
+		get
+		{
+			return this._hoadon_tongtien;
+		}
+		set
+		{
+			if ((this._hoadon_tongtien != value))
+			{
+				this.Onhoadon_tongtienChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_tongtien = value;
+				this.SendPropertyChanged("hoadon_tongtien");
+				this.Onhoadon_tongtienChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_magiamgia", DbType="NChar(10)")]
+	public string hoadon_magiamgia
+	{
+		get
+		{
+			return this._hoadon_magiamgia;
+		}
+		set
+		{
+			if ((this._hoadon_magiamgia != value))
+			{
+				this.Onhoadon_magiamgiaChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_magiamgia = value;
+				this.SendPropertyChanged("hoadon_magiamgia");
+				this.Onhoadon_magiamgiaChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tenkhachhang", DbType="NVarChar(MAX)")]
+	public string hoadon_tenkhachhang
+	{
+		get
+		{
+			return this._hoadon_tenkhachhang;
+		}
+		set
+		{
+			if ((this._hoadon_tenkhachhang != value))
+			{
+				this.Onhoadon_tenkhachhangChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_tenkhachhang = value;
+				this.SendPropertyChanged("hoadon_tenkhachhang");
+				this.Onhoadon_tenkhachhangChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_createdate", DbType="DateTime2")]
+	public System.Nullable<System.DateTime> hoadon_createdate
+	{
+		get
+		{
+			return this._hoadon_createdate;
+		}
+		set
+		{
+			if ((this._hoadon_createdate != value))
+			{
+				this.Onhoadon_createdateChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_createdate = value;
+				this.SendPropertyChanged("hoadon_createdate");
+				this.Onhoadon_createdateChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_giovao", DbType="NChar(10)")]
+	public string hoadon_giovao
+	{
+		get
+		{
+			return this._hoadon_giovao;
+		}
+		set
+		{
+			if ((this._hoadon_giovao != value))
+			{
+				this.Onhoadon_giovaoChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_giovao = value;
+				this.SendPropertyChanged("hoadon_giovao");
+				this.Onhoadon_giovaoChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_phaitra", DbType="NChar(10)")]
+	public string hoadon_phaitra
+	{
+		get
+		{
+			return this._hoadon_phaitra;
+		}
+		set
+		{
+			if ((this._hoadon_phaitra != value))
+			{
+				this.Onhoadon_phaitraChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_phaitra = value;
+				this.SendPropertyChanged("hoadon_phaitra");
+				this.Onhoadon_phaitraChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_tinhtrangbill", DbType="NVarChar(MAX)")]
+	public string hoadon_tinhtrangbill
+	{
+		get
+		{
+			return this._hoadon_tinhtrangbill;
+		}
+		set
+		{
+			if ((this._hoadon_tinhtrangbill != value))
+			{
+				this.Onhoadon_tinhtrangbillChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_tinhtrangbill = value;
+				this.SendPropertyChanged("hoadon_tinhtrangbill");
+				this.Onhoadon_tinhtrangbillChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hoadon_diachigiaohang", DbType="NVarChar(MAX)")]
+	public string hoadon_diachigiaohang
+	{
+		get
+		{
+			return this._hoadon_diachigiaohang;
+		}
+		set
+		{
+			if ((this._hoadon_diachigiaohang != value))
+			{
+				this.Onhoadon_diachigiaohangChanging(value);
+				this.SendPropertyChanging();
+				this._hoadon_diachigiaohang = value;
+				this.SendPropertyChanged("hoadon_diachigiaohang");
+				this.Onhoadon_diachigiaohangChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_LoaiMaGiamGia")]
+public partial class tb_LoaiMaGiamGia : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _loaimagiamgia_id;
+	
+	private string _loaimagiamgia_name;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onloaimagiamgia_idChanging(int value);
+    partial void Onloaimagiamgia_idChanged();
+    partial void Onloaimagiamgia_nameChanging(string value);
+    partial void Onloaimagiamgia_nameChanged();
+    #endregion
+	
+	public tb_LoaiMaGiamGia()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaimagiamgia_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int loaimagiamgia_id
+	{
+		get
+		{
+			return this._loaimagiamgia_id;
+		}
+		set
+		{
+			if ((this._loaimagiamgia_id != value))
+			{
+				this.Onloaimagiamgia_idChanging(value);
+				this.SendPropertyChanging();
+				this._loaimagiamgia_id = value;
+				this.SendPropertyChanged("loaimagiamgia_id");
+				this.Onloaimagiamgia_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_loaimagiamgia_name", DbType="NVarChar(MAX)")]
+	public string loaimagiamgia_name
+	{
+		get
+		{
+			return this._loaimagiamgia_name;
+		}
+		set
+		{
+			if ((this._loaimagiamgia_name != value))
+			{
+				this.Onloaimagiamgia_nameChanging(value);
+				this.SendPropertyChanging();
+				this._loaimagiamgia_name = value;
+				this.SendPropertyChanged("loaimagiamgia_name");
+				this.Onloaimagiamgia_nameChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_MaGiamGiaCuaKhachHang")]
+public partial class tb_MaGiamGiaCuaKhachHang : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _magiamgiacuakhachhang_id;
+	
+	private System.Nullable<int> _magiamgia_id;
+	
+	private System.Nullable<int> _khachhang_id;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onmagiamgiacuakhachhang_idChanging(int value);
+    partial void Onmagiamgiacuakhachhang_idChanged();
+    partial void Onmagiamgia_idChanging(System.Nullable<int> value);
+    partial void Onmagiamgia_idChanged();
+    partial void Onkhachhang_idChanging(System.Nullable<int> value);
+    partial void Onkhachhang_idChanged();
+    #endregion
+	
+	public tb_MaGiamGiaCuaKhachHang()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgiacuakhachhang_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int magiamgiacuakhachhang_id
+	{
+		get
+		{
+			return this._magiamgiacuakhachhang_id;
+		}
+		set
+		{
+			if ((this._magiamgiacuakhachhang_id != value))
+			{
+				this.Onmagiamgiacuakhachhang_idChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgiacuakhachhang_id = value;
+				this.SendPropertyChanged("magiamgiacuakhachhang_id");
+				this.Onmagiamgiacuakhachhang_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_magiamgia_id", DbType="Int")]
+	public System.Nullable<int> magiamgia_id
+	{
+		get
+		{
+			return this._magiamgia_id;
+		}
+		set
+		{
+			if ((this._magiamgia_id != value))
+			{
+				this.Onmagiamgia_idChanging(value);
+				this.SendPropertyChanging();
+				this._magiamgia_id = value;
+				this.SendPropertyChanged("magiamgia_id");
+				this.Onmagiamgia_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_khachhang_id", DbType="Int")]
+	public System.Nullable<int> khachhang_id
+	{
+		get
+		{
+			return this._khachhang_id;
+		}
+		set
+		{
+			if ((this._khachhang_id != value))
+			{
+				this.Onkhachhang_idChanging(value);
+				this.SendPropertyChanging();
+				this._khachhang_id = value;
+				this.SendPropertyChanged("khachhang_id");
+				this.Onkhachhang_idChanged();
 			}
 		}
 	}

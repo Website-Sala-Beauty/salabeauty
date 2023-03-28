@@ -23,12 +23,14 @@ public class webui
         list.Add("trangchu|trang-chu|~/web_TrangChu.aspx");
 
         list.Add("applogin|app-login|~/web_module/web_DangNhap.aspx");
+        list.Add("appdangki|app-dang-ki|~/web_module/web_DangKi.aspx");
         //Xu hướng
         list.Add("capnhatxuhuong|app-cap-nhat-xu-huong|~/web_module/web_CapNhatXuHuong.aspx");
         list.Add("webcapnhatxuhuongchitiet|cap-nhat-xu-huong-chi-tiet-{xuhuong-id}|~/web_module/web_CapNhatXuHuongChiTiet.aspx");
+        list.Add("webtimkiem|tim-kiem-{text}|~/web_module/web_TimKiem.aspx");
 
-        list.Add("menudicvudatlich|menu-dich-vu-dat-lich|~/web_module/web_ChonMenuDichVu.aspx");
-        list.Add("menudicvu|menu-dich-vu|~/web_module/web_MenuDichVu.aspx");
+        list.Add("menudicvudatlich|menu-dich-vu-dat-lich|~/web_module/web_MenuDichVu.aspx");
+        list.Add("menudicvu|menu-dich-vu|~/web_module/web_ChonMenuDichVu.aspx"); 
         list.Add("danhgia|danh-gia|~/web_module/web_DanhGia.aspx");
         list.Add("homthu|hom-thu|~/web_module/web_DanhGiaChiTiet.aspx");
         list.Add("sanphamdanhgia|danh-gia-san-pham|~/web_module/web_SanPhamDanhGia.aspx");
@@ -48,7 +50,7 @@ public class webui
         list.Add("maunailchitietdatlich|mau-nail-dat-lich-{id}|~/web_module/web_MauNailChiTietDatLich.aspx");
         list.Add("donggia|san-pham-dong-gia|~/web_module/web_DongGia.aspx");
         list.Add("giohang|gio-hang|~/web_module/web_GioHang.aspx");
-        list.Add("gioithieubanbe|gioi-thieu-ban-be|~/web_module/web_GioiThieuBanBe.aspx");
+        list.Add("gioithieubanbe|gioi-thieu-ban-be|~/web_module/web_MauNailChiTietDatLich.aspx");
         list.Add("gioithieu|gioi-thieu|~/web_module/web_GioiThieu.aspx");
         list.Add("magiamgia|ma-giam-gia|~/web_module/web_MaGiamGia.aspx");
         list.Add("maqr|ma-qr|~/web_module/web_MaQR.aspx");

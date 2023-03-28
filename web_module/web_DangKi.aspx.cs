@@ -22,20 +22,21 @@ public partial class web_module_web_DangKi : System.Web.UI.Page
         }
         else
         {
-            var checkTaiKhoan = from tk in db.khachhangs where tk.sdt == txtSoDienThoai.Value select tk;
+            var checkTaiKhoan = from tk in db.tb_Users where tk.user_Phone == txtSoDienThoai.Value select tk;
             if (checkTaiKhoan.Count() > 0)
             {
                 alert.alert_Error(Page, "Số điện thoại này đã tồn tại", "");
             }
             else
             {
-                khachhang insert = new khachhang();
-                insert.sdt = txtSoDienThoai.Value;
-                insert.ten = txtHoTen.Value;
-                insert.email = txtEmail.Value;
-                insert.password = txtPassword.Value;
+                tb_User insert = new tb_User();
+                insert.user_Phone = txtSoDienThoai.Value;
+                insert.user_FullName = txtHoTen.Value;
+                insert.user_Email = txtEmail.Value;
+                insert.user_Password = txtPassword.Value;
+                insert.groupuser_id = 4;
 
-                db.khachhangs.InsertOnSubmit(insert);
+                db.tb_Users.InsertOnSubmit(insert);
                 db.SubmitChanges();
                 Response.Redirect("/web_module/web_DangNhap.aspx");
             }
