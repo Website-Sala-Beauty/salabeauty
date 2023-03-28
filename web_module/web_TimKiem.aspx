@@ -1,9 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_AblumSanPham.aspx.cs" Inherits="web_module_web_AblumSanPham" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_TimKiem.aspx.cs" Inherits="web_module_web_TimKiem" %>
 
-<%@ Register Src="~/web_userControl/head_thongbao.ascx" TagPrefix="uc1" TagName="head_thongbao" %>
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="../css/footer.css" rel="stylesheet" />
     <link href="../css/MauNailBox.css" rel="stylesheet" />
     <style>
@@ -19,7 +16,7 @@
         }
     </style>
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <style>
         .item img {
             margin: 0;
@@ -32,7 +29,7 @@
         }
     </style>
     <div class="navabar">
-        <a href="/trang-chu"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+        <a href="Default.aspx"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <div class="tieude"><span>MẪU NAILS</span></div>
     </div>
     <div class="base">
@@ -50,9 +47,9 @@
         <div class="row">
             <asp:Repeater ID="rpMauNail" runat="server">
                 <ItemTemplate>
-                    <a href="mau-nail-dat-lich-<%#Eval("loaisanpham_id")%>" class="block-nailbox col-sm-5">
-                        <img src="<%#Eval("loaisanpham_image") %>" />
-                        <span class="name-album"><%#Eval("loaisanpham_name") %></span>
+                    <a href="mau-nail-dat-lich-<%#Eval("sanpham_id")%>" class="block-nailbox col-sm-5">
+                        <img src="<%#Eval("sanpham_image") %>" />
+                        <span class="name-album"><%#Eval("sanpham_name") %></span>
                     </a>
                 </ItemTemplate>
             </asp:Repeater>

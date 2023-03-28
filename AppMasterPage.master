@@ -57,23 +57,23 @@
 <footer>
     <div class="footer-phone">
         <div class="tab-nav-container">
-            <a href="Default.aspx" class="tab">
+            <a href="/trang-chu" class="tab">
                 <img src="../images/sala.png" style="width: 221px; margin-top: -78px;" />
                 <p>Trang chủ</p>
             </a>
-            <a href="tell:0789448907">
+            <a href="tell:0966053414">
                 <div class="tab purple">
                     <img src="../images/phone.png" />
                     <p>Gọi điện</p>
                 </div>
             </a>
-            <a href="https://www.facebook.com/salanailsbeauty">
+            <a href="#">
                 <div class="tab pink">
                     <img src="../images/messenger.png" />
                     <p>Nhấn tin</p>
                 </div>
             </a>
-            <a href="thong-tin-chi-nhanh" class="tab yellow">
+            <a href="#" class="tab yellow">
                 <img src="../images/chi-nhanh.png" />
                 <p style="padding: unset">Chi Nhánh</p>
             </a>
