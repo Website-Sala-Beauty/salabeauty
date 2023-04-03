@@ -1,17 +1,21 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin_MasterPage.master" AutoEventWireup="true" CodeFile="module_LoaiDichVu.aspx.cs" Inherits="admin_page_module_function_module_LoaiDichVu" %>
 
-<%@ Register Assembly="DevExpress.Web.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register TagPrefix="dx" Namespace="DevExpress.Web" Assembly="DevExpress.Web.v17.1" %>
+<%@ Register Assembly="DevExpress.Web.ASPxHtmlEditor.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxHtmlEditor" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxSpellChecker.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxSpellChecker" TagPrefix="dx" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="headlink" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="headlink" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="hihead" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="hihead" runat="Server">
 </asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="himenu" Runat="Server">
+<asp:Content ID="Content3" ContentPlaceHolderID="himenu" runat="Server">
 </asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="hibodyhead" Runat="Server">
+<asp:Content ID="Content4" ContentPlaceHolderID="hibodyhead" runat="Server">
 </asp:Content>
-<asp:Content ID="Content5" ContentPlaceHolderID="hibodywrapper" Runat="Server">
+<asp:Content ID="Content5" ContentPlaceHolderID="hibodywrapper" runat="Server">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
+
         function func() {
             grvList.Refresh();
             popupControl.Hide();
@@ -89,23 +93,23 @@
         </div>
         <div class="form-group table-responsive">
             <dx:ASPxGridView ID="grvList" runat="server" ClientInstanceName="grvList" KeyFieldName="loaisanpham_id" Width="100%">
-                <columns>
+                <Columns>
                     <dx:GridViewCommandColumn ShowSelectCheckbox="True" SelectAllCheckboxMode="Page" VisibleIndex="0" Width="2%">
                     </dx:GridViewCommandColumn>
                     <dx:GridViewDataColumn Caption="Tên loại" FieldName="loaisanpham_name" HeaderStyle-HorizontalAlign="Center" Width="20%"></dx:GridViewDataColumn>
                     <dx:GridViewDataColumn Caption="Hình ảnh" FieldName="loaisanpham_image" Width="20%" HeaderStyle-HorizontalAlign="Center" CellStyle-VerticalAlign="Middle">
-                        <dataitemtemplate>
+                        <DataItemTemplate>
                             <img src="<%#Eval("loaisanpham_image") %>" height="100" />
-                        </dataitemtemplate>
+                        </DataItemTemplate>
                     </dx:GridViewDataColumn>
-                    <%--  <dx:GridViewDataColumn Caption="#" FieldName="sanpham_parent" HeaderStyle-HorizontalAlign="Center" Width="20%"></dx:GridViewDataColumn>--%>
-                </columns>
-                <clientsideevents rowdblclick="btnChiTiet" />
-                <settingssearchpanel visible="true" />
-                <settingsbehavior allowfocusedrow="true" />
-                <settingstext emptydatarow="Không có dữ liệu" searchpaneleditornulltext="Gõ từ cần tìm kiếm và enter..." />
-                <settingsloadingpanel text="Đang tải..." />
-                <settingspager pagesize="10" summary-text="Trang {0} / {1} ({2} trang)"></settingspager>
+                  <%--  <dx:GridViewDataColumn Caption="#" FieldName="sanpham_parent" HeaderStyle-HorizontalAlign="Center" Width="20%"></dx:GridViewDataColumn>--%>
+                </Columns>
+                <ClientSideEvents RowDblClick="btnChiTiet" />
+                <SettingsSearchPanel Visible="true" />
+                <SettingsBehavior AllowFocusedRow="true" />
+                <SettingsText EmptyDataRow="Không có dữ liệu" SearchPanelEditorNullText="Gõ từ cần tìm kiếm và enter..." />
+                <SettingsLoadingPanel Text="Đang tải..." />
+                <SettingsPager PageSize="10" Summary-Text="Trang {0} / {1} ({2} trang)"></SettingsPager>
             </dx:ASPxGridView>
         </div>
     </div>
@@ -208,16 +212,14 @@
                 <asp:Button ID="btnLuu" runat="server" ClientIDMode="Static" Text="Lưu" CssClass="btn btn-primary" OnClientClick="return checkNULL()" OnClick="btnLuu_Click" />
             </div>
         </FooterContentTemplate>
-<ClientSideEvents CloseUp="function(s,e){grvList.Refresh();}"></ClientSideEvents>
-
         <ContentStyle>
             <Paddings PaddingBottom="0px" />
         </ContentStyle>
     </dx:ASPxPopupControl>
 </asp:Content>
-<asp:Content ID="Content6" ContentPlaceHolderID="hibodybottom" Runat="Server">
+<asp:Content ID="Content6" ContentPlaceHolderID="hibodybottom" runat="Server">
 </asp:Content>
-<asp:Content ID="Content7" ContentPlaceHolderID="hifooter" Runat="Server">
+<asp:Content ID="Content7" ContentPlaceHolderID="hifooter" runat="Server">
     <script type="text/javascript">
         function clickavatar1() {
             $("#up1 input[type=file]").click();
@@ -237,6 +239,7 @@
 
     </script>
 </asp:Content>
-<asp:Content ID="Content8" ContentPlaceHolderID="hifootersite" Runat="Server">
+<asp:Content ID="Content8" ContentPlaceHolderID="hifootersite" runat="Server">
 </asp:Content>
+
 

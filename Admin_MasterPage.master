@@ -9,10 +9,6 @@
 
     <link href="admin_css/app-blue.css" rel="stylesheet" />
     <link href="admin_css/admin_style.css" rel="stylesheet" />
-    <link href="admin_css/datepicker.min.css" rel="stylesheet" />
-    <link href="css/Lan.css" rel="stylesheet" />
-    <link href="admin_css/datepicker.min.css" rel="stylesheet" />
-    <script src="/admin_js/sweetalert.min.js"></script>
     <link href="fontawesome-free-6.2.1-web/css/all.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="image_/Logo.png" />
     <link href="admin_css/vendor.css" rel="stylesheet" />
@@ -140,7 +136,7 @@
                             <nav class="menu">
                                 <ul class="nav metismenu" id="sidebar-menu">
                                     <li>
-                                        <a href="/module_LoaiDichVu.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Quản lý xin nghỉ<i class="fa arrow"></i></a>
+                                        <a href="/admin_page/module_function/module_LoaiDichVu.aspx" class="Danhmuc"><i class="fa-solid fa-table-cells-large"></i>Nhóm Dịch Vụ<i class="fa arrow"></i></a>
 
                                     </li>
                                 </ul>
@@ -317,9 +313,6 @@
             <script src="admin_js/datepicker.min.js"></script>
             <script src="admin_js/datepicker.en.js"></script>
             <script src="admin_js/azia.js"></script>
-
-
-
             <script>
                 $('input.number__comma').keyup(function (event) {
 
