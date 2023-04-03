@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Page_ComingSoonaspx.aspx.cs" Inherits="web_module_Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="web_ComingSoonaspx.aspx.cs" Inherits="web_module_Default" %>
 
 
 <!DOCTYPE html>
