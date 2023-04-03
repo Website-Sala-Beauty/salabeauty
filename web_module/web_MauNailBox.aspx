@@ -1,8 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AppMasterPage.master" AutoEventWireup="true" CodeFile="web_MauNailBox.aspx.cs" Inherits="web_module_module_app_web_MauNailBox" %>
 <%@ Register Src="~/web_usercontrol/head_thongbao.ascx" TagPrefix="uc1" TagName="linqheader" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-    <%--<link href="../../Dung_css/MauNailBox.css" rel="stylesheet" />
-    <link href="../../css/footer.css" rel="stylesheet" />--%>
     <link href="../css/maunailboxchitiet.css" rel="stylesheet" />
     <link href="../css/ribon.css" rel="stylesheet" />
     <script src="../../admin_js/sweetalert.min.js"></script>
@@ -36,7 +34,6 @@
                                 <b class="khung2"><%#Eval("sanpham_gia", "{0:N0}") %></b>
                             </div>
                         </a>
-
                         <div class="block-dadat">
                             <p><%#Eval("sanpham_luotmua") %> Lượt mua </p>
                             <i class="fa fa-cart-plus" onclick="themGioHang(<%#Eval("sanpham_id")%>)" aria-hidden="true">

@@ -22,7 +22,6 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
         }
 
     }
-
     protected void loadData()
     {
         var getKH = (from kh in db.tb_Users
@@ -52,12 +51,11 @@ public partial class web_module_module_app_web_MauNailBox : System.Web.UI.Page
         rpNailBox.DataSource = getOld;
         rpNailBox.DataBind();
     }
-
     protected void btnGiohang_ServerClick(object sender, EventArgs e)
     {
 
         var checkSanPham = from sp in db.tb_SanPhams where sp.sanpham_id == Convert.ToInt32(txtIDNailbox.Value) select sp;
-        var getIDKhachHang = from kh in db.tb_Users where kh.user_Phone == Request.Cookies["phone"].Value select kh;
+        var getIDKhachHang = from kh in db.tb_Users where kh.user_Phone == Request.Cookies["UserNail"].Value select kh;
         // Kiểm tra khách hàng có tạo đặt lịch trong bảng tạm chưa
         var checkTaoLichTam = from dht in db.tb_HoaDons where dht.hoadon_hidden == "Tạo giỏ hàng" && dht.hoadon_tinhtrang == "Order" && dht.khachhang_id == getIDKhachHang.FirstOrDefault().user_Id select dht;
         if (checkTaoLichTam.Count() > 0)
