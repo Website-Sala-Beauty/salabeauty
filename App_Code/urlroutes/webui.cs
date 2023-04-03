@@ -36,6 +36,7 @@ public class webui
         list.Add("sanphamdanhgia|danh-gia-san-pham|~/web_module/web_SanPhamDanhGia.aspx");
 
         list.Add("hoadondatlich|hoa-don-dat-lich|~/web_module/web_DatLich.aspx");
+        list.Add("hoadoncommingsoon|comming-soon|~/web_module/web_ComingSoonaspx.aspx");
         list.Add("chonsanpham|chon-san-pham|~/web_module/web_ChonSanPhamDichVu.aspx");
         list.Add("maunail|album-nails|~/web_module/web_AblumSanPham.aspx");
         list.Add("tintucmagiamgia|thong-tin-ma-giam-gia|~/web_module/web_MaGiamGiaChiTiet.aspx");
