@@ -190,4 +190,21 @@
       <Column Name="khachhang_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.tb_ThongTinChiNhanh" Member="tb_ThongTinChiNhanhs">
+    <Type Name="tb_ThongTinChiNhanh">
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongtinchinhanh_name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_sodiemthoai" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_diachi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_gioithieu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tb_ThongTinChiNhanhImage" Member="tb_ThongTinChiNhanhImages">
+    <Type Name="tb_ThongTinChiNhanhImage">
+      <Column Name="thongtinchinhanhimage_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="thongtinchinhanhimage_image" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thongtinchinhanh_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

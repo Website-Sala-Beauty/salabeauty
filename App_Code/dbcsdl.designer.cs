@@ -56,6 +56,12 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
   partial void Inserttb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
   partial void Updatetb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
   partial void Deletetb_MaGiamGiaCuaKhachHang(tb_MaGiamGiaCuaKhachHang instance);
+  partial void Inserttb_ThongTinChiNhanh(tb_ThongTinChiNhanh instance);
+  partial void Updatetb_ThongTinChiNhanh(tb_ThongTinChiNhanh instance);
+  partial void Deletetb_ThongTinChiNhanh(tb_ThongTinChiNhanh instance);
+  partial void Inserttb_ThongTinChiNhanhImage(tb_ThongTinChiNhanhImage instance);
+  partial void Updatetb_ThongTinChiNhanhImage(tb_ThongTinChiNhanhImage instance);
+  partial void Deletetb_ThongTinChiNhanhImage(tb_ThongTinChiNhanhImage instance);
   #endregion
 	
 	public dbcsdlDataContext() : 
@@ -229,6 +235,22 @@ public partial class dbcsdlDataContext : System.Data.Linq.DataContext
 		get
 		{
 			return this.GetTable<tb_MaGiamGiaCuaKhachHang>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tb_ThongTinChiNhanh> tb_ThongTinChiNhanhs
+	{
+		get
+		{
+			return this.GetTable<tb_ThongTinChiNhanh>();
+		}
+	}
+	
+	public System.Data.Linq.Table<tb_ThongTinChiNhanhImage> tb_ThongTinChiNhanhImages
+	{
+		get
+		{
+			return this.GetTable<tb_ThongTinChiNhanhImage>();
 		}
 	}
 }
@@ -3151,6 +3173,298 @@ public partial class tb_MaGiamGiaCuaKhachHang : INotifyPropertyChanging, INotify
 				this._khachhang_id = value;
 				this.SendPropertyChanged("khachhang_id");
 				this.Onkhachhang_idChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_ThongTinChiNhanh")]
+public partial class tb_ThongTinChiNhanh : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _thongtinchinhanh_id;
+	
+	private string _thongtinchinhanh_name;
+	
+	private string _thongtinchinhanh_image;
+	
+	private string _thongtinchinhanh_sodiemthoai;
+	
+	private string _thongtinchinhanh_diachi;
+	
+	private string _thongtinchinhanh_gioithieu;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onthongtinchinhanh_idChanging(int value);
+    partial void Onthongtinchinhanh_idChanged();
+    partial void Onthongtinchinhanh_nameChanging(string value);
+    partial void Onthongtinchinhanh_nameChanged();
+    partial void Onthongtinchinhanh_imageChanging(string value);
+    partial void Onthongtinchinhanh_imageChanged();
+    partial void Onthongtinchinhanh_sodiemthoaiChanging(string value);
+    partial void Onthongtinchinhanh_sodiemthoaiChanged();
+    partial void Onthongtinchinhanh_diachiChanging(string value);
+    partial void Onthongtinchinhanh_diachiChanged();
+    partial void Onthongtinchinhanh_gioithieuChanging(string value);
+    partial void Onthongtinchinhanh_gioithieuChanged();
+    #endregion
+	
+	public tb_ThongTinChiNhanh()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int thongtinchinhanh_id
+	{
+		get
+		{
+			return this._thongtinchinhanh_id;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_id != value))
+			{
+				this.Onthongtinchinhanh_idChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_id = value;
+				this.SendPropertyChanged("thongtinchinhanh_id");
+				this.Onthongtinchinhanh_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_name", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanh_name
+	{
+		get
+		{
+			return this._thongtinchinhanh_name;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_name != value))
+			{
+				this.Onthongtinchinhanh_nameChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_name = value;
+				this.SendPropertyChanged("thongtinchinhanh_name");
+				this.Onthongtinchinhanh_nameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_image", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanh_image
+	{
+		get
+		{
+			return this._thongtinchinhanh_image;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_image != value))
+			{
+				this.Onthongtinchinhanh_imageChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_image = value;
+				this.SendPropertyChanged("thongtinchinhanh_image");
+				this.Onthongtinchinhanh_imageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_sodiemthoai", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanh_sodiemthoai
+	{
+		get
+		{
+			return this._thongtinchinhanh_sodiemthoai;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_sodiemthoai != value))
+			{
+				this.Onthongtinchinhanh_sodiemthoaiChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_sodiemthoai = value;
+				this.SendPropertyChanged("thongtinchinhanh_sodiemthoai");
+				this.Onthongtinchinhanh_sodiemthoaiChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_diachi", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanh_diachi
+	{
+		get
+		{
+			return this._thongtinchinhanh_diachi;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_diachi != value))
+			{
+				this.Onthongtinchinhanh_diachiChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_diachi = value;
+				this.SendPropertyChanged("thongtinchinhanh_diachi");
+				this.Onthongtinchinhanh_diachiChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_gioithieu", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanh_gioithieu
+	{
+		get
+		{
+			return this._thongtinchinhanh_gioithieu;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_gioithieu != value))
+			{
+				this.Onthongtinchinhanh_gioithieuChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_gioithieu = value;
+				this.SendPropertyChanged("thongtinchinhanh_gioithieu");
+				this.Onthongtinchinhanh_gioithieuChanged();
+			}
+		}
+	}
+	
+	public event PropertyChangingEventHandler PropertyChanging;
+	
+	public event PropertyChangedEventHandler PropertyChanged;
+	
+	protected virtual void SendPropertyChanging()
+	{
+		if ((this.PropertyChanging != null))
+		{
+			this.PropertyChanging(this, emptyChangingEventArgs);
+		}
+	}
+	
+	protected virtual void SendPropertyChanged(String propertyName)
+	{
+		if ((this.PropertyChanged != null))
+		{
+			this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
+}
+
+[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tb_ThongTinChiNhanhImage")]
+public partial class tb_ThongTinChiNhanhImage : INotifyPropertyChanging, INotifyPropertyChanged
+{
+	
+	private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+	
+	private int _thongtinchinhanhimage_id;
+	
+	private string _thongtinchinhanhimage_image;
+	
+	private int _thongtinchinhanh_id;
+	
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onthongtinchinhanhimage_idChanging(int value);
+    partial void Onthongtinchinhanhimage_idChanged();
+    partial void Onthongtinchinhanhimage_imageChanging(string value);
+    partial void Onthongtinchinhanhimage_imageChanged();
+    partial void Onthongtinchinhanh_idChanging(int value);
+    partial void Onthongtinchinhanh_idChanged();
+    #endregion
+	
+	public tb_ThongTinChiNhanhImage()
+	{
+		OnCreated();
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanhimage_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+	public int thongtinchinhanhimage_id
+	{
+		get
+		{
+			return this._thongtinchinhanhimage_id;
+		}
+		set
+		{
+			if ((this._thongtinchinhanhimage_id != value))
+			{
+				this.Onthongtinchinhanhimage_idChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanhimage_id = value;
+				this.SendPropertyChanged("thongtinchinhanhimage_id");
+				this.Onthongtinchinhanhimage_idChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanhimage_image", DbType="NVarChar(MAX)")]
+	public string thongtinchinhanhimage_image
+	{
+		get
+		{
+			return this._thongtinchinhanhimage_image;
+		}
+		set
+		{
+			if ((this._thongtinchinhanhimage_image != value))
+			{
+				this.Onthongtinchinhanhimage_imageChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanhimage_image = value;
+				this.SendPropertyChanged("thongtinchinhanhimage_image");
+				this.Onthongtinchinhanhimage_imageChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_thongtinchinhanh_id", DbType="Int NOT NULL")]
+	public int thongtinchinhanh_id
+	{
+		get
+		{
+			return this._thongtinchinhanh_id;
+		}
+		set
+		{
+			if ((this._thongtinchinhanh_id != value))
+			{
+				this.Onthongtinchinhanh_idChanging(value);
+				this.SendPropertyChanging();
+				this._thongtinchinhanh_id = value;
+				this.SendPropertyChanged("thongtinchinhanh_id");
+				this.Onthongtinchinhanh_idChanged();
 			}
 		}
 	}
